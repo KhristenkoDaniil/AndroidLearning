@@ -28,6 +28,7 @@ import ua.dnigma.fragment2fragment_sendobject.model.MovieModel;
 import ua.dnigma.fragment2fragment_sendobject.model.PictureModel;
 import ua.dnigma.fragment2fragment_sendobject.model.UserProfileModel;
 import ua.dnigma.fragment2fragment_sendobject.tasks.ImaxRequestTask;
+import ua.dnigma.fragment2fragment_sendobject.tasks.PictureJsonRequestTask;
 import ua.dnigma.fragment2fragment_sendobject.ui.adapter.MovieAdapter;
 import ua.dnigma.fragment2fragment_sendobject.ui.fragment.MovieListFragment;
 
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //
 //            }
 //        });
+
 
     }
 
@@ -83,7 +85,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.start_activity_button:
-                startFragment();
+                new PictureJsonRequestTask().execute();
+
+//                startFragment();
 
 //                startActivityWithData(createUserProfileModel());
                 break;
